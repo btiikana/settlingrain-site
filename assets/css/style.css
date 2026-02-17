@@ -1,0 +1,392 @@
+:root{
+  --bg:#0e1a1f;
+  --card:#14252c;
+  --text:#e4f0f2;
+  --muted:#9fb5b9;
+  --border:#1f3a41;
+  --btn:#1c353c;
+  --accent:#2e5f66;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Rain texture overlay */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background-image: url("../img/rain-texture.png");
+  background-repeat: repeat;
+  background-size: 700px auto;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-header,
+main,
+footer{
+  position: relative;
+  z-index: 1;
+}
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* HEADER */
+.site-header{
+  border-bottom: 1px solid var(--border);
+  background: rgba(14,26,31,0.90);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.brand-logo{
+  height: 56px;
+  width: auto;
+  display:block;
+  transition: 0.2s ease;
+}
+
+.brand:hover .brand-logo{
+  transform: scale(1.03);
+}
+
+.nav{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav a{
+  text-decoration:none;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: .2s ease;
+}
+
+.nav a:hover,
+.nav a.active{
+  color: var(--text);
+  background: rgba(46,95,102,0.20);
+}
+
+.nav-cta{
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* COMMON */
+.muted{
+  color: var(--muted);
+  margin: 6px 0 0 0;
+}
+
+.kicker{
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: var(--accent);
+  letter-spacing: .3px;
+}
+
+.sub{
+  margin: 0 0 20px 0;
+  color: var(--muted);
+  max-width: 75ch;
+}
+
+.hero-note{
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.cta-row{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.card{
+  background: rgba(20,37,44,0.92);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.button{
+  background: var(--btn);
+  color: var(--text);
+  padding: 10px 16px;
+  text-decoration:none;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.button:hover{
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button.small{
+  padding: 8px 14px;
+  font-size: 0.95rem;
+}
+
+.button.ghost{
+  background: transparent;
+}
+
+/* HOMEPAGE (RainyMood-like) */
+.home-stage{
+  margin-top: 28px;
+  border-radius: 22px;
+  padding: 70px 0;
+  background:
+    radial-gradient(900px 520px at 25% 30%, rgba(46,95,102,0.15), rgba(14,26,31,0.0) 60%),
+    linear-gradient(rgba(14,26,31,0.72), rgba(14,26,31,0.92)),
+    url("../img/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 30px 90px rgba(0,0,0,.65);
+}
+
+.home-panel{
+  max-width: 900px;
+  padding: 0 28px;
+}
+
+.home-title{
+  margin: 0 0 14px 0;
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -0.2px;
+}
+
+/* Now Playing card */
+.now-playing{
+  margin-top: 18px;
+}
+
+.np-top{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.np-label{
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.np-title{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.np-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.featured{
+  margin: 6px 0 0 0;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.player{
+  width: 100%;
+  margin-top: 16px;
+}
+
+.np-bottom{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+/* TRACK LIST PAGE */
+.page-head{
+  padding: 20px 0;
+}
+
+.page-head h1{
+  margin: 0 0 6px 0;
+  font-size: 30px;
+}
+
+.grid{
+  display: grid;
+  gap: 18px;
+}
+
+.track-head{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.track-title{
+  margin: 0;
+  font-size: 20px;
+}
+
+.track-link{
+  color: var(--text);
+  text-decoration: none;
+}
+
+.track-link:hover{
+  color: var(--accent);
+}
+
+.track-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= TRACK PAGE ================= */
+
+.track-page{
+  text-align:center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Smaller, more refined image */
+.track-image{
+  width: 100%;
+  max-width: 480px;   /* reduced from 720 */
+  border-radius: 18px;
+  margin: 0 auto 24px auto;
+  display:block;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0,0,0,.45);
+}
+
+.track-note{
+  margin: 8px 0 0 0;
+  color: var(--accent);
+}
+
+.player{
+  width: 100%;
+  margin-top: 16px;
+}
+
+.track-cta{
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* Follow CTA section */
+
+.follow-cta{
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.follow-cta p{
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+
+/* FOOTER */
+.site-footer{
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  margin-top: 50px;
+  background: rgba(14,26,31,0.85);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-link{
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.footer-link:hover{
+  color: var(--accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px){
+  .brand-logo{ height: 48px; }
+  .home-title{ font-size: 38px; }
+  .home-stage{ padding: 64px 0; }
+}
+
+@media (max-width: 768px){
+  .brand-logo{ height: 40px; }
+  .home-title{ font-size: 30px; }
+  .home-stage{ padding: 54px 0; }
+  .home-panel{ padding: 0 18px; }
+
+  .np-top{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .np-actions{
+    justify-content: flex-start;
+  }
+
+  .track-head{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track-actions{
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px){
+  .brand-logo{ height: 34px; }
+  .home-title{ font-size: 26px; }
+}

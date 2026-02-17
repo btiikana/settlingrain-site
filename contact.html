@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact · SettlingRain</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="SettlingRain logo">
+    </a>
+    <nav class="nav">
+      <a href="tracks.html">Free Tracks</a>
+      <a href="license.html">License</a>
+      <a href="about.html">About</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-head">
+    <h1>Contact</h1>
+    <p class="muted">Quiet contact only.</p>
+  </section>
+
+  <section class="card">
+    <p class="muted">
+      For questions about usage, permissions, or if a download link breaks:
+    </p>
+    <p>
+      <a class="track-link" href="mailto:contact@settlingrain.com">hello@settlingrain.com</a>
+    </p>
+
+    <p class="muted">
+      If you came from Facebook, you can also message the page directly.
+    </p>
+
+    <div class="cta-row">
+      <a class="button small ghost" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Message on Facebook</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="muted">© <span id="year"></span> SettlingRain</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

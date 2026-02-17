@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track · SettlingRain</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="SettlingRain logo">
+    </a>
+    <nav class="nav">
+      <a href="tracks.html">Free Tracks</a>
+      <a href="license.html">License</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card track-page">
+    <img id="track-image" class="track-image" src="" alt="Track artwork" />
+
+    <h1 id="track-title"></h1>
+    <p id="track-meta" class="muted"></p>
+    <p id="track-note" class="track-note"></p>
+
+    <audio id="track-audio" controls class="player" preload="none">
+      <source id="track-source" src="" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="cta-row track-cta">
+      <a id="download-btn" class="button" href="" download>Download MP3</a>
+      <a class="button ghost" href="tracks.html">Back to All Tracks</a>
+      <a class="button ghost" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Back to Facebook</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="muted">© <span id="year"></span> SettlingRain</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const ARTIST = "SettlingRain";
+
+  const TRACKS = {
+    "interlude-in-rain": { title: "Interlude in Rain", duration: "3:57", file: "assets/audio/interlude-in-rain.mp3", image: "assets/img/interlude-in-rain.png", note: "Featured in the SettlingRain welcome video." },
+    "vesper-light": { title: "Vesper Light", duration: "4:27", file: "assets/audio/vesper-light.mp3", image: "assets/img/vesper-light.png" },
+    "nocturne-in-blue": { title: "Nocturne in Blue", duration: "5:15", file: "assets/audio/nocturne-in-blue.mp3", image: "assets/img/nocturne-in-blue.png" },
+    "adagio-in-mist": { title: "Adagio in Mist", duration: "2:30", file: "assets/audio/adagio-in-mist.mp3", image: "assets/img/adagio-in-mist.png" },
+    "hearth-in-shadow": { title: "Hearth in Shadow", duration: "4:22", file: "assets/audio/hearth-in-shadow.mp3", image: "assets/img/hearth-in-shadow.png" },
+    "blue-vigil": { title: "Blue Vigil", duration: "5:09", file: "assets/audio/blue-vigil.mp3", image: "assets/img/blue-vigil.png" },
+    "lunar-stillness": { title: "Lunar Stillness", duration: "4:34", file: "assets/audio/lunar-stillness.mp3", image: "assets/img/lunar-stillness.png" },
+    "quiet-interval": { title: "Quiet Interval", duration: "5:14", file: "assets/audio/quiet-interval.mp3", image: "assets/img/quiet-interval.png" },
+    "lamplight-reverie": { title: "Lamplight Reverie", duration: "3:33", file: "assets/audio/lamplight-reverie.mp3", image: "assets/img/lamplight-reverie.png" },
+    "hushed-etude": { title: "Hushed Étude", duration: "5:09", file: "assets/audio/hushed-etude.mp3", image: "assets/img/hushed-etude.png" }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id || !TRACKS[id]) {
+    document.getElementById("track-title").textContent = "Track not found";
+    document.getElementById("track-meta").textContent = "Please return to the track list.";
+    document.getElementById("track-image").style.display = "none";
+    document.getElementById("track-note").style.display = "none";
+  } else {
+    const t = TRACKS[id];
+    document.title = `${t.title} · ${ARTIST}`;
+    document.getElementById("track-title").textContent = t.title;
+    document.getElementById("track-meta").textContent = `${ARTIST} · ${t.duration}`;
+    document.getElementById("track-source").src = t.file;
+    document.getElementById("track-audio").load();
+    document.getElementById("download-btn").href = t.file;
+    document.getElementById("track-image").src = t.image;
+
+    if (t.note) {
+      document.getElementById("track-note").textContent = t.note;
+    } else {
+      document.getElementById("track-note").style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

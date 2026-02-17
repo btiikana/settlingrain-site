@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Free Tracks · SettlingRain</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="SettlingRain logo">
+    </a>
+    <nav class="nav">
+      <a class="active" href="tracks.html">Free Tracks</a>
+      <a href="license.html">License</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="page-head">
+    <h1>Free Tracks</h1>
+    <p class="muted">Listen or download. Each track has its own page for sharing.</p>
+  </section>
+
+  <section id="tracks" class="grid"></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="muted">© <span id="year"></span> SettlingRain</span>
+  </div>
+</footer>
+
+<script src="assets/js/tracks.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

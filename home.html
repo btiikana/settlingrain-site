@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SettlingRain</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="home">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="home.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="SettlingRain logo">
+    </a>
+
+    <nav class="nav">
+      <a href="tracks.html">Free Tracks</a>
+      <a href="about.html">About</a>
+      <a class="nav-cta" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Facebook</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="home-stage">
+    <div class="home-panel">
+
+      <h1 class="home-title">Press play. Settle in.</h1>
+
+      <p class="sub">
+        Thank you for visiting — most people arrive here from Facebook.
+        This site exists mainly as a simple, reliable place to listen and download
+        the tracks shared on the SettlingRain page.
+      </p>
+
+      <div class="now-playing card">
+        <div class="np-top">
+          <div>
+            <div class="np-label muted">Now playing</div>
+            <div id="np-title" class="np-title">Interlude in Rain</div>
+            <div id="np-meta" class="muted">SettlingRain · 3:57</div>
+            <div class="featured">Featured in the SettlingRain welcome video</div>
+          </div>
+
+          <div class="np-actions">
+            <a id="np-download" class="button small" href="assets/audio/interlude-in-rain.mp3" download>Download</a>
+            <a class="button small ghost" href="track.html?id=interlude-in-rain">Open Track Page</a>
+          </div>
+        </div>
+
+        <audio id="home-audio" controls class="player" preload="metadata">
+          <source id="home-source" src="assets/audio/interlude-in-rain.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <div class="np-bottom">
+          <a class="button" href="tracks.html">Browse Free Tracks</a>
+          <a class="button ghost" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Back to Facebook</a>
+        </div>
+      </div>
+
+      <p class="hero-note muted">
+        Download a track, or simply stay a while.
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="muted">© <span id="year"></span> SettlingRain</span>
+    <a class="muted footer-link" href="https://www.facebook.com/settlingrain" target="_blank" rel="noopener">Visit SettlingRain on Facebook</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script src="assets/js/home-player.js"></script>
+
+</body>
+</html>
