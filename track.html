@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Track · SettlingRain</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -26,7 +27,6 @@
 <main class="container">
   <section class="card track-page">
     <img id="track-image" class="track-image" src="" alt="Track artwork" />
-
     <h1 id="track-title"></h1>
     <p id="track-meta" class="muted"></p>
     <p id="track-note" class="track-note"></p>
@@ -52,9 +52,7 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-
   const ARTIST = "SettlingRain";
-
   const TRACKS = {
     "interlude-in-rain": { title: "Interlude in Rain", duration: "3:57", file: "assets/audio/interlude-in-rain.mp3", image: "assets/img/interlude-in-rain.png", note: "Featured in the SettlingRain welcome video." },
     "vesper-light": { title: "Vesper Light", duration: "4:27", file: "assets/audio/vesper-light.mp3", image: "assets/img/vesper-light.png" },
@@ -85,14 +83,9 @@
     document.getElementById("track-audio").load();
     document.getElementById("download-btn").href = t.file;
     document.getElementById("track-image").src = t.image;
-
-    if (t.note) {
-      document.getElementById("track-note").textContent = t.note;
-    } else {
-      document.getElementById("track-note").style.display = "none";
-    }
+    if (t.note) { document.getElementById("track-note").textContent = t.note; } 
+    else { document.getElementById("track-note").style.display = "none"; }
   }
 </script>
-
 </body>
 </html>
